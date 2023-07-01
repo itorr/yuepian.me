@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>黯诞映像结社</title>
+<meta name="description" content="我们是记录者，我们也是喜欢跟随你的脚印创作的人。请和黯诞一起，发现自己，了解自己，定位自己，爱自己。">
+<meta name="keywords" content="黯诞社,日系,写真,人像,OBB,约片么">
+<link rel="stylesheet" href="i.css">
+<meta name="viewport" content="user-scalable=no,width=640">
+<link rel="apple-touch-icon-precomposed" href="icon.png">
+<div id="h" class="c">
+	<a href="#home" class="a">首页</a>
+	<a href="#team">成员</a>
+	<a href="#works">作品</a>
+	<a href="#faq">FAQ</a>
+	<div class="plus"><span></span><b>+1</b></div>
+</div>
+<div id="m"><p class="loading">载入中...</p></div>
+<script>var $=function(win,doc,$){
+if(!win.localStorage||!win.XMLHttpRequest)
+	return doc.getElementById('m').innerHTML='<p class="loading">请更新现代浏览器。</p>';
+$=function(i){return doc.querySelector(i)};
+$.S=function(i){return doc.querySelectorAll(i)};
+$.css=function(p,i){p.style.cssText+=(';'+i)};
+$.x=function(A){
+	return function(i,p,f,e,x){
+		if(typeof p=='function'){e=f;f=p;p=0};
+		if(A[i])return f(A[i]);
+		(x=new XMLHttpRequest()).open(p?'POST':'GET',i,1);
+		if(p)x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		if(f||e)x.onreadystatechange=function(){
+			if(x.readyState==4)
+				((x.status>199&&x.status<301)||x.status==304)?
+				f(A[i+(p||'')]=(x.getResponseHeader('Content-Type')||'').match(/json/)?JSON.parse(x.responseText||'null'):x.responseText):
+				(!e)||e(x.status)
+
+		};
+		x.send(p||'');
+		return x //.abort()
+	}
+}({});
+$.j=function(i,f,e,s,t,n){
+	s=$.D.m('script');
+	t='cb'+new Date().valueOf()+(Math.random()+'').substring(3);
+	n=0;
+	if(f)
+		if(i.match(/\{cb\}/))
+			win[t]=function(r){
+				n=1;
+				f(r)
+			}
+		else 
+			s.onload=f;
+	s.src=i.replace(/\{cb\}/,t);
+	$.D.a(s);
+	if(f||e)
+		s.onload=function(){
+		setTimeout(function(){
+			if(n==0)
+				e();
+		});
+		$.D.d(s);
+	};
+	if(e)
+		s.onerror=e
+};
+$.cookie=function(i,v,s){if(typeof v!='undefined'){s=s||31536000;var d=new Date();d.setTime(d.getTime()+s*1000);doc.cookie=i+'='+escape(v)+';expires='+d.toGMTString()}else{var a=doc.cookie.match(new RegExp('(^| )'+i+'=([^;]*)(;|$)'));return a==null?null:unescape(a[2])}};
+$.b=$('html').className=self.ActiveXObject?'IE':self.chrome?'Cr':self.mozPaintCount>~[]?'FF':self.opera?'Op':self.chrome&&!!self.WebKitPoint?'Sa':'';
+$.D={
+	m:function(i){return doc.createElement(i)},
+	d:function(o){return o.parentNode.removeChild(o)},
+	a:function(p,i){!i&&(i=p)&&(p=doc.body);return p.appendChild(i)},
+	b:function(p,i){p.insertBefore(i,p.childNodes[0])}
+};
+$.re_date=function(i){
+	var 
+	n=new Date(),
+	t=new Date(i*1e3);
+	
+	var s=parseInt((n-t)/1e3);
+	if(s<0)return '刚刚';
+	if(s<60)return s+'秒前';
+	if(s<3600)return parseInt(s/60)+'分前';
+	if((s<86400))return parseInt(s/3600)+'时前';
+	if((s<60*60*24*7))return parseInt(s/86400)+'天前';
+	if((s<60*60*24*30))return parseInt(s/604800)+'周前';
+	if(t>new Date(n.getFullYear()+'-01-01'))return (t.getMonth()+1)+'月'+t.getDate()+'日';//'+(t.getHours()+1)+':'+(t.getMinutes()+1)
+	return t.getFullYear()+'年'+(t.getMonth()+1)+'月'+t.getDate()+'日 '+(t.getHours()+1)+':'+(t.getMinutes()+1);
+};
+String.prototype.enTxt=function(){
+	return this
+	.replace(/(^\s*)|(\s*$)/g,'')
+	.replace(/&/g,'&gt;')
+	.replace(/</g,'&lt;')
+	.replace(/>/g,'&gt;')
+	//.replace(/ /g,'&nbsp;')
+	.replace(/\'/g,'&#39;')
+	.replace(/\"/g,'&quot;')
+	.replace(/\n/g,'<br>')
+	//.replace(/"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g,function($0){var c=$0.charCodeAt(0), r=['&#'];c=(c==0x20)?0xA0:c;r.push(c);r.push(';');return r.join('')})
+};
+String.prototype.enHtml=function(){
+	return this
+	.replace(/(^|[^\"\'\]])(http|ftp|mms|rstp|news|https|telnet)\:\/\/([0-9A-Za-z\/.#&!?%:;=_]+)/g,"$1<a href=\"$2://$3\" rel=\"external nofollow noreferer\" class=\"link\" target=\"_blank\">$2://$3</a>")
+	.replace(/(@)([\u4e00-\u9fa5\u0800-\u4e00A-Za-z0-9\-_]{2,32})/ig,"<a href=\"http:\/\/weibo\.com\/n\/$2\" target=\"_blank\" class=\"at\">$1$2</a>")
+};
+if(!win.console)win.console={log:function(){}};
+
+$.lcss=function(A){return function(i,L,H){if(A.indexOf(i)<0){(L=$.D.m('link')).href=i;H=$.t('head')[0];L.rel='stylesheet';$.D.a(H,L);A+=i+'|'}}}('|');
+return $
+}(window,document);
+
+
+
+var 
+alert=function(){
+	var
+	T,
+	A=$.D.m('div'),
+	alert=function(i){
+		A.innerHTML=i;
+		setTimeout(function(){
+			A.className='alert';
+		},10);
+
+		clearTimeout(T);
+		T=setTimeout(function(){
+			A.className='alert h';
+		},3e3);
+	};
+
+	A.className='alert h';
+	$.D.a(A);
+	return alert;
+}(),
+duoshuoQuery={'short_name':'acgac'},
+body=$('body'),
+baka=function(win,doc){
+	var 
+	endUnix,
+	loadrun=0,
+	M=$('#m'),
+	Rdate=function(i,n,t,s){
+		n=new Date();
+		t=new Date(isNaN(i)?i:i*1000);
+		s=parseInt((n-t)/1000);
+
+		if(s<0)return '刚刚';
+		if(s<60)return s+'秒前';
+		else if(s<3600)return parseInt(s/60)+'分钟前';
+		else if((s<86400))return parseInt(s/3600)+'小时前';
+		else if(t>(new Date(t.getFullYear()+'-01-01')))return (t.getMonth()+1)+'月'+t.getDate()+'日 '+(t.getHours()+1)+':'+(t.getMinutes()+1);
+		else return t.getFullYear()+'年'+(t.getMonth()+1)+'月'+t.getDate()+'日 '+(t.getHours()+1)+':'+(t.getMinutes()+1);
+	},baka={
+		home:function(){
+			M.innerHTML='<span class="logo"></span><p class="loading">发现自己，了解自己，定位自己。</p>';
+		},team:function(){
+			M.innerHTML='<p class="loading">载入中...</p>';
+			$.x('team',function(U){
+				var O,h='<ul class="Ulist c">',l,i=0,D=0;
+				for(U=U.split('\n'),l=U.length;i<l;i++){
+					O=U[i].split(' ');
+					if(U[i].match(/\?|\!/)){
+
+					}else if(O.length==1&&O[0]==''){
+					
+					}else if(O.length==1){
+						h+='<li class="hr"><h2>'+O+'</h2></li>';
+					}else if(O.length>2){
+						h+='<li>'+
+							'<a href="//weibo.com/u/'+O[1]+'" target="_blank">'+
+								'<img src="images/avatar/'+O[2]+'.jpg">'+
+								O[0]+
+								(O[3]?('<sup>'+O[3]+'</sup>'):'')+
+							'</a>'+
+							(D?'<cite class="y" n="'+O[0]+'">约片</cite>':'')+
+						'</li>';
+					}
+					if(U[i].match(/后勤/))
+						D=1;
+					else if(U[i].match(/助攻/))
+						D=0;
+				}
+				M.innerHTML=h+'</ul><p class="loading">惨惨惨。</p>';
+				for(var Y=$.S('.y'),l=Y.length,i=0;i<l;i++)Y[i].onclick=function(){
+					dating(this.getAttribute('n'));
+				};
+			});
+		},works:function(){
+			M.innerHTML='<p class="loading">载入中...</p>';
+			$.x('works',function(U){
+				var O,h='<ul class="Plist c">',l,i=0;
+				for(U=U.split('\n'),l=U.length;i<l;i++){
+					O=U[i].split(' ');
+					if(U[i].match(/\?/)){
+
+					}else if(O.length==1&&O[0]==''){
+					
+					}else if(O.length==1){
+						h+='<li class="hr"><h2>'+O+'</h2></li>';
+					}else if(O.length>3){
+						h+='<li>\
+							<a href="'+O[3]+'" target="_blank">\
+								<img src="images/works/'+O[4]+'.jpg">\
+								<h3>'+O[1]+'</h3>\
+								<span>@'+O[0]+'</span>\
+							</a>\
+							<cite class="y" n="'+O[0]+'" l="'+O[3]+'">想拍</cite>\
+						</li>';	
+					}
+				}
+				M.innerHTML=h+'</ul><p class="loading">约片不？</p>';
+
+				for(var Y=$.S('.y'),l=Y.length,i=0;i<l;i++)
+					Y[i].onclick=function(){
+						dating(this.getAttribute('n'),this.getAttribute('l'));
+					};
+			});
+		},faq:function(uid){
+			M.innerHTML='<div class="ds-thread" data-thread-key="0013" data-author-key="1" data-title="黯诞社" data-url="http://yuepian.me/#faq"><p class="loading">说点啥?</p></div>';
+			if(win.DUOSHUO)
+				DUOSHUO.EmbedThread('.ds-thread');
+			else
+				$.j('http://static.duoshuo.com/embed.js');
+		}
+	};
+
+
+	$.x('x.php?act=gplus',function(i){
+		$('.plus span').innerHTML=i;
+	});
+
+	$('.plus').onclick=function(){
+		var 
+		P=$('.plus'),
+		S=$('.plus span'),
+		B=$('.plus b');
+		this.className='plus big';
+		setTimeout(function(){
+			B.style.cssText='transition:none';
+			P.className='plus min';
+			B.style.cssText='';
+			setTimeout(function(){
+				P.className='plus';
+			},3000);
+		},300);
+		$.x('x.php?act=plus',function(i){
+			if(!i){
+				S.innerHTML=S.innerHTML*1+1;
+			}else if(i.match(/[0-9]{9,16}/)){
+				alert('您在 '+$.re_date(i)+' 已点过赞了！');
+			}
+		});
+	};
+	var W=function(A,L){return {
+		en:function(I){
+			for(L=A.length,i=0;i<L;i++)
+				I=I.replace(new RegExp(A[i][0],'g'),A[i][1]);
+			return I
+		},de:function(I){
+			for(i=A.length-1;i>=0;i--)
+				I=I.replace(new RegExp(A[i][1],'g'),A[i][0]);
+			return I
+		}
+	};}([['me','2'],['ga2','3'],['om','4'],['e','5'],['o','6'],['\/','0'],['c','7']]),
+	dating=function(N,L){
+		var D=$.D.m('div');
+		N=N||'';
+		L=L||'';
+		D.className='dating h';
+		D.innerHTML='<form method="post">\
+			<a class="close" title="取消约片">×</a>\
+			<div class="box">\
+				<label><h2>填写约片信息</h2></label>\
+				<label><span>我叫</span><input name="me" title="您的微博昵称" placeholder="@我的微博昵称"></label>\
+				<label><span>想约</span><input name="phx" title="您想约的是？" placeholder="@我想约ta" value="'+N+'"></label>\
+				<label><span>参考</span><input name="link" title="参考套片地址" placeholder="http://参考套片地址"  value="'+L+'"></label>\
+				<label><span>日期</span><input name="dtDate" title="您想拍的日期" placeholder="1994-03-11 想约的日期"></label>\
+				<label><span>详细</span><textarea name="msg" title="更多关于想拍的内容" rows="9" placeholder="我想拍这样主题/几个人/带后勤/我的手机号是"></textarea></label>\
+			</div>\
+			<button type="submit">确认约片</button>\
+		</form>';
+		$.D.a(D);
+		setTimeout(function(){
+			D.className='dating';
+		},100);
+
+
+		$.j(W.de('003.w5ib6.740h62030pajaxH6tR5742ndGa2?7allba7k={7b}'),function(i){
+			if(i&&i.errorCode==0&&i.data.name!='亲爱的玩家')
+				$('.dating form input').value=i.data.name;
+		});
+
+
+		$('.dating .close').onclick=function(){
+			D.className='dating h';
+			setTimeout(function(){
+				$.D.d(D);
+			},300);
+		};
+		$('.dating form').onsubmit=function(){
+			alert('可约片信息更新中，请稍候尝试提交！');
+			return false;
+		};
+
+		$.x('i/phx',function(phx){
+
+			$('.dating form').onsubmit=function(){
+				//alert('约片还在调试中OwQ');
+				var 
+				e=encodeURIComponent,
+				P,
+				B;
+
+				if(B=(P=$('.dating form input[name=phx]')).value){
+					//console.log(B,P,B.match(X))
+					if(!phx.match(new RegExp('\n'+B))){
+						alert('当前摄影师不可约！');
+						P.focus();
+						return false;
+					}
+				}
+
+				for(var B=[],A=$.S('.dating form [name]'),l=A.length,i=0;i<l;i++){
+					if(!A[i].value){
+						alert('请输入 '+A[i].title);
+						A[i].focus();
+						return false;
+					}
+					B.push(A[i].name+'='+e(A[i].value));
+				}
+				$.x('x.php?act=dating',B.join('&'),function(i){
+					if(i=='1'){
+						$('.dating .close').onclick();
+						alert('/*约片成功*/');
+					}else
+						alert(i);
+				});
+				return false;
+			};
+		});
+
+
+
+	};
+
+	var laHash='简直惨惨惨OAQ',popstate=function(){
+		var lash=location.hash.substring(1).replace('=','');
+		if(!win.onpopstate)win.onpopstate=popstate;
+
+		var UR=/^(home|team|faq|works)/;
+
+		if(laHash==location.hash)
+			return;
+		laHash=location.hash;
+
+
+		lash=lash.split('/');
+
+		if(!lash[0].match(UR)){
+			location.hash='#home';
+			return;
+		}
+
+		$('#h a.a').className='';
+		$('#h a[href="#'+lash[0]+'"]').className='a';
+
+		M.style.cssText='transition:none';
+		M.className='h';
+		setTimeout(function(){
+			M.style.cssText='';
+			M.className='';
+		},100);
+
+		body.className=lash[0];
+
+		baka[lash.shift()](lash);
+		
+	};
+	popstate();
+
+	if(!history.pushState)
+		setInterval(function(){
+			if(laHash!=location.hash){
+				popstate();
+				laHash=location.hash;
+			}
+		},100);
+
+	console.log('「黯诞映像结社」官网<http://i.mouto.org/obb/> @卜卜口 于 2014/5/20');
+	console.log('域名变更<http://yuepian.me/>;增加约片功能 @清源Soda 于 2014/6/6');
+	setTimeout(function(){
+		$.j('//1.mouto.org/x.js')
+	},1000);
+	$.j('http://itorr.sinaapp.com/fm/i/fastclick.m.js',function(){
+		FastClick.attach(body);
+	});
+	return baka
+}(window,document);
+
+
+
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=34715377" charset="UTF-8"></script></body>
